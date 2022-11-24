@@ -2,7 +2,6 @@
 
 import logging
 
-import zope.interface
 from certbot import interfaces
 from certbot import errors
 
@@ -13,8 +12,6 @@ from lexicon.providers import powerdns
 
 logger = logging.getLogger(__name__)
 
-@zope.interface.implementer(interfaces.IAuthenticator)
-@zope.interface.provider(interfaces.IPluginFactory)
 class Authenticator(dns_common.DNSAuthenticator):
     """DNS Authenticator for PowerDNS DNS."""
 
